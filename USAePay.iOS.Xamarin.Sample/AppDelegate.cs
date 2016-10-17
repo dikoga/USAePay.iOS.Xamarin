@@ -1,6 +1,5 @@
 ﻿using Foundation;
 using UIKit;
-using USAePay.iOS.Xamarin.Binding;
 
 namespace USAePay.iOS.Xamarin.Sample
 {
@@ -9,10 +8,6 @@ namespace USAePay.iOS.Xamarin.Sample
 	[Register ("AppDelegate")]
 	public class AppDelegate : UIApplicationDelegate
 	{
-		// class-level declarations
-		public static usaepayMiddleware CardReader;
-		public static MiddlewareSettings CardReaderSettings;
-		public static CardReaderDelegate CardReaderCallback;
 
 		public override UIWindow Window {
 			get;
@@ -23,14 +18,6 @@ namespace USAePay.iOS.Xamarin.Sample
 		{
 			// Override point for customization after application launch.
 			// If not required for your application you can safely delete this method
-
-			CardReader = usaepayMiddleware.Instance;
-			CardReaderSettings = MiddlewareSettings.SharedManager;
-			CardReaderSettings.SetMode ("sandbox");
-			CardReaderSettings.SourceKey = "sourcekey";
-			CardReaderSettings.PinNum = "pinnum";
-			CardReaderCallback = new CardReaderDelegate ();
-			CardReader.SetDevice ("icmp", CardReaderCallback);
 
 			return true;
 		}
@@ -47,7 +34,7 @@ namespace USAePay.iOS.Xamarin.Sample
 		{
 			// Use this method to release shared resources, save user data, invalidate timers and store the application state.
 			// If your application supports background exection this method is called instead of WillTerminate when the user quits.
-			CardReader.DisconnectDevice ();
+
 		}
 
 		public override void WillEnterForeground (UIApplication application)
@@ -60,7 +47,7 @@ namespace USAePay.iOS.Xamarin.Sample
 		{
 			// Restart any tasks that were paused (or not yet started) while the application was inactive. 
 			// If the application was previously in the background, optionally refresh the user interface.
-			CardReader.ConnectDevice ();
+
 		}
 
 		public override void WillTerminate (UIApplication application)

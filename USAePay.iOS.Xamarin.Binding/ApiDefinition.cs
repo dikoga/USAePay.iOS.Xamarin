@@ -26,7 +26,7 @@ namespace USAePay.iOS.Xamarin.Binding
 		[Static]
 		[Export ("sharedManager")]
 		//[Verify (MethodToProperty)]
-		MiddlewareSettings SharedManager { get; }
+		MiddlewareSettings Instance { get; }
 
 		// @property (readwrite, nonatomic) NSString * currentMode;
 		[Export ("currentMode")]
