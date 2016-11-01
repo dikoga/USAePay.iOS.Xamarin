@@ -7,4 +7,4 @@
 
 using ObjCRuntime;
 
-[assembly: LinkWith ("RBA_SDK.a", LinkTarget.ArmV7 | LinkTarget.Arm64, SmartLink = true, ForceLoad = true)]
+[assembly: LinkWith ("RBA_SDK.a", LinkTarget.ArmV7 | LinkTarget.ArmV7s | LinkTarget.x86_64 | LinkTarget.Arm64, SmartLink = true, ForceLoad = true)]

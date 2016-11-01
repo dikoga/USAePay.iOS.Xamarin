@@ -27,8 +27,8 @@ namespace USAePay.iOS.Xamarin.Sample
 			CardReader = usaepayMiddleware.Instance;
 			CardReaderSettings = MiddlewareSettings.Instance;
 			//CardReaderSettings.SetMode ("sandbox");
-			CardReaderSettings.SourceKey = "source";
-			CardReaderSettings.PinNum = "pin";
+			CardReaderSettings.SourceKey = "rOk1PeN3ye6IN0Y3ZkZ1yb3hQc7u2HY3";
+			CardReaderSettings.PinNum = "ht402ht";
 			CardReaderCallback = new CardReaderDelegate(UpdateStatus, RefNumCallback);
 			CardReader.SetDevice("icmp", CardReaderCallback);
 		}

@@ -7,4 +7,4 @@
 
 using ObjCRuntime;
 
-[assembly: LinkWith ("libMiddleware-iOSLibrary.a", LinkTarget.ArmV7 | LinkTarget.Arm64, SmartLink = true, ForceLoad = true, Frameworks = "ExternalAccessory", LinkerFlags = "-lc++")]
+[assembly: LinkWith ("libMiddleware-iOSLibrary.a", LinkTarget.ArmV7 | LinkTarget.ArmV7s | LinkTarget.x86_64 | LinkTarget.Arm64, SmartLink = true, ForceLoad = true, Frameworks = "ExternalAccessory", LinkerFlags = "-lc++")]
