@@ -12,7 +12,7 @@ namespace USAePay.iOS.Xamarin.Sample
 		public usaepayMiddleware CardReader;
 		public MiddlewareSettings CardReaderSettings;
 		public CardReaderDelegate CardReaderCallback;
-		public const string AMOUNT = "0.11";
+		public const string AMOUNT = "0.15";
 		private SignaturePadView signature;
 
 		protected ViewController (IntPtr handle) : base (handle)
@@ -27,8 +27,8 @@ namespace USAePay.iOS.Xamarin.Sample
 			CardReader = usaepayMiddleware.Instance;
 			CardReaderSettings = MiddlewareSettings.Instance;
 			//CardReaderSettings.SetMode ("sandbox");
-			CardReaderSettings.SourceKey = "rOk1PeN3ye6IN0Y3ZkZ1yb3hQc7u2HY3";
-			CardReaderSettings.PinNum = "ht402ht";
+			CardReaderSettings.SourceKey = "SourceKey";
+			CardReaderSettings.PinNum = "PinNum";
 			CardReaderCallback = new CardReaderDelegate(UpdateStatus, RefNumCallback);
 			CardReader.SetDevice("icmp", CardReaderCallback);
 		}
